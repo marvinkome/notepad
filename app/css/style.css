@@ -1,0 +1,57 @@
+/**
+    .css/style.css
+*/
+
+/** nav styles **/
+nav .brand-logo{
+    font-size: 20px;
+}
+nav .brand-logo.left{
+    padding-left: 5px;
+}
+nav .brand-logo.right{
+    padding-right: 5px;
+}
+
+/* list item styles */
+.container.item-list{
+    margin: 0px 0px;
+    width: 100%;
+}
+.section.item{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.item span{
+    font-weight: 700;
+}
+.personal{
+    border-left:  12px solid #00897b;
+    padding-left: 6px;
+}
+.work{
+    border-left:  12px solid #ff5722;
+    padding-left: 6px;
+}
+.school{
+    border-left:  12px solid #8e24aa;
+    padding-left: 6px;
+}
+
+/* action button */
+.action-button i{
+    font-size: 1.36em;
+}
+
+/* note inputs */
+.input-field.first{
+    margin-top: 2rem !important;
+}
+
+/* note page */
+ul > li{
+    padding-bottom: 7px;
+    padding-left: 7px;
+    font-size: 16px;
+    font-weight: 400;
+}
