@@ -3,25 +3,27 @@
  */
 
 import { ADD_NOTE, EDIT_NOTE } from '../constants/action-types';
+import initialState from './init';
 
-let initialState = {
-    notes: [
-        { 
-            title: 'React Redux Tutorial for Beginners',
-            id: 1,
-            date: '12-6-09',
-            entry: 'React Redux Tutorial for Beginners',
-            category: 'personal'
-        }
-    ]
+
+const saveStore =  (store) => {
+    if(localStorage){
+        store = JSON.stringify(store);
+        localStorage.setItem('notepad_store', store)
+    }
+
+    return true;
 }
 
 export const rootReducer = (state = initialState, action) => {
     switch (action.type){
         case ADD_NOTE:
-            return Object.assign(state, {
+            Object.assign(state, {
                 notes: [...state.notes, action.payload] 
             });
+
+            saveStore(state);
+            return state;
 
         case EDIT_NOTE:
             const tmp = state.notes.find( 
@@ -30,6 +32,8 @@ export const rootReducer = (state = initialState, action) => {
             tmp.title = action.payload.title;
             tmp.entry = action.payload.entry;
             tmp.category = action.payload.category;
+
+            saveStore(state);
             return state;
        default:            
             return state

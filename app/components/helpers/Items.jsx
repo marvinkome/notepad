@@ -22,6 +22,8 @@ class ConnectedNotes extends React.Component{
         return(
             <div className="container item-list">
                 {
+                    this.props.notes.length < 1 ? 
+                    <h5 className='center'>No note yet....</h5> :
                     this.props.notes.map(note => (
                         <div key={note.id} >
                             <Link className='black-text'
